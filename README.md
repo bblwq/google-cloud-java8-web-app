@@ -1,2 +1,4 @@
-# google-cloud
-Note: Run `mvnw clean package appengine:deploy` to deploy the app.
+# google-cloud-spring-boot-java8
+Note:
+* Run `sudo ./mvnw clean package appengine:run` to deploy the app locally.
+* Run `sudo ./mvnw clean package appengine:deploy` to deploy the app to your App Engine.
