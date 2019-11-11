@@ -1,20 +1,4 @@
-/*
- * Copyright 2017 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package com.example.appengine.java8;
+package com.weiqiliu.home;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
@@ -38,7 +22,6 @@ import org.mockito.MockitoAnnotations;
 /**
  * Unit tests for {@link HelloAppEngine}.
  */
-// [START example]
 @RunWith(JUnit4.class)
 public class HelloAppEngineTest {
   private static final String FAKE_URL = "fake.fk/hello";
@@ -61,7 +44,6 @@ public class HelloAppEngineTest {
     // Set up a fake HTTP response.
     responseWriter = new StringWriter();
     when(mockResponse.getWriter()).thenReturn(new PrintWriter(responseWriter));
-
     servletUnderTest = new HelloAppEngine();
   }
 
@@ -72,7 +54,6 @@ public class HelloAppEngineTest {
   @Test
   public void doGetWritesResponse() throws Exception {
     servletUnderTest.doGet(mockRequest, mockResponse);
-
     // We expect our hello world response.
     assertThat(responseWriter.toString())
         .named("HelloAppEngine response")
@@ -87,4 +68,3 @@ public class HelloAppEngineTest {
       .containsMatch("^Version:\\s+.+OS:\\s+.+User:\\s");
   }
 }
-// [END example]
