@@ -1,1 +1,8 @@
+# Folders
 target/
+.settings/
+.metadata/
+
+# Files
+.project
+.classpath
